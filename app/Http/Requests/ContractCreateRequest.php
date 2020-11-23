@@ -23,14 +23,16 @@ class ContractCreateRequest extends FormRequest
      */
     public function rules()
     {
-        // return [
-        //     'denumire_contract'=>'required|max:255',
-        // ];
+        return [
+            // 'denumire_contract'=>'required|max:255',
+            // 'descriere_contract'=>'required|max:1000',
+        ];
     }
 
     public function messages(){
         return[
             'denumire_contract.max'=> 'Contract name should not be greater than 255 chars.',
+            'descriere_contract.max'=> 'Contract name should not be greater than 1000 chars.',
 
         ];
     }

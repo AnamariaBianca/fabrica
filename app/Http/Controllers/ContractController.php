@@ -22,8 +22,8 @@ class ContractController extends Controller
 
     public function store(ContractCreateRequest $request)
      {
-         dd($request->all());
-        // contract::create($request->all());
-        // return redirect()->back()->with ('message', 'Contract adaugat!');
+        // dd($request->all());
+        contract::create($request->all());
+        return redirect()->back()->with ('message', 'Contract adaugat!');
      }
 }

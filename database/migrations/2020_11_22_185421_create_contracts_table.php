@@ -17,8 +17,9 @@ class CreateContractsTable extends Migration
             $table->increments('id_contract');
             $table->string('denumire_contract');
             $table->text('descriere_contract');
-            $table->integer('id_produs');
-            $table->integer('id_furnizor');
+            $table->foreignId('id_produs')->constrained('produs');
+            $table->foreignId('id_furnizor')->constrained('furnizor');
+           
             $table->timestamps();
         });
     }

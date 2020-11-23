@@ -6,10 +6,10 @@
         <form method="post" action="{{route('contract.store')}}" class="py-5" >
             @csrf
            <div class="py-1">
-            <input type="text" name="title" class="py-2 px-2 border rounded" placeholder="Denumire"/>
+            <input type="text" name="denumire_contract" class="py-2 px-2 border rounded" placeholder="Denumire"/>
            </div>
            <div class="py-1">
-           <textarea name="description" class="p-2 rounded border " placeholder="Descriere"></textarea>
+           <textarea name="descriere_contract" class="p-2 rounded border " placeholder="Descriere"></textarea>
            </div>
             <input type="submit" value="Adauga" class ="p-1 border rounded-lg"/>
             

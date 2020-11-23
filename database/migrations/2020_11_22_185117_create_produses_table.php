@@ -17,8 +17,8 @@ class CreateProdusesTable extends Migration
             $table->increments('id_produs');
             $table->string('denumire_produs');
             $table->text('descriere_produs');
-            $table->integer('id_contract');
-            $table->integer('id_furnizor');
+            $table->foreignId('id_contract')->constrained('contract');
+            $table->foreignId('id_furnizor')->constrained('furnizor');
             $table->timestamps();
         });
     }
