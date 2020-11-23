@@ -15,7 +15,7 @@ class CreateFurnizorsTable extends Migration
     {
         Schema::create('furnizors', function (Blueprint $table) {
             $table->increments('id_furnizor');
-            $table->string('nume_furnizor');
+            $table->string('denumire_furnizor');
             $table->integer('id_contract');
             $table->integer('id_produs');
             $table->timestamps();

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class contract extends Model
 {
-    protected $fillable=['descriere_contract','id_produs','id_furnizor'];
+    protected $fillable=['denumire_contract','descriere_contract','id_produs','id_furnizor'];
 
 
     public function produseC()
