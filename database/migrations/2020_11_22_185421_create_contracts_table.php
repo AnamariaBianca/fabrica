@@ -17,10 +17,14 @@ class CreateContractsTable extends Migration
             $table->increments('id_contract');
             $table->string('denumire_contract');
             $table->text('descriere_contract');
-            $table->foreignId('id_produs')->constrained('produs');
-            $table->foreignId('id_furnizor')->constrained('furnizor');
+            
            
             $table->timestamps();
+        });
+
+        Schema::table('contracts', function (Blueprint $table) {
+            $table->foreignId('id_produs')->constrained('produses');
+            $table->foreignId('id_furnizor')->constrained('furnizors');
         });
     }
 

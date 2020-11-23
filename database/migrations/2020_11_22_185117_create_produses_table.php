@@ -17,9 +17,13 @@ class CreateProdusesTable extends Migration
             $table->increments('id_produs');
             $table->string('denumire_produs');
             $table->text('descriere_produs');
-            $table->foreignId('id_contract')->constrained('contract');
-            $table->foreignId('id_furnizor')->constrained('furnizor');
+            
             $table->timestamps();
+        });
+
+        Schema::table('produses', function (Blueprint $table) {
+            $table->foreignId('id_contract')->constrained('contracts');
+            $table->foreignId('id_furnizor')->constrained('furnizors');
         });
     }
 
