@@ -7,4 +7,33 @@
 
 </div>
 
+<ul class="my-5">
+	<x-alert/>
+
+	    @foreach($contracte as $contract)
+
+        
+            <li>
+            {{$contract->denumire_contract}}
+
+            <div>
+
+					
+					
+					<a href="{{'/contract/'.$contract->id.'/edit'}}" class="text-yellow-400 cursor-pointer  text-white"><span class="fas fa-edit px-2"></a>
+
+
+
+
+					
+
+
+
+					
+				</div>
+            </li>
+        
+
+        @endforeach
+ </ul>
 @endsection

@@ -14,17 +14,13 @@ class CreateProdusesTable extends Migration
     public function up()
     {
         Schema::create('produses', function (Blueprint $table) {
-            $table->increments('id_produs');
+            $table->id();
             $table->string('denumire_produs');
             $table->text('descriere_produs');
-            
             $table->timestamps();
         });
 
-        Schema::table('produses', function (Blueprint $table) {
-            $table->foreignId('id_contract')->constrained('contracts');
-            $table->foreignId('id_furnizor')->constrained('furnizors');
-        });
+        
     }
 
     /**

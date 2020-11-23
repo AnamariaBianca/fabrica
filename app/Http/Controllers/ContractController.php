@@ -26,4 +26,17 @@ class ContractController extends Controller
         contract::create($request->all());
         return redirect()->back()->with ('message', 'Contract adaugat!');
      }
+
+     public function update(ContractCreateRequest $request, contract $contracte)
+    {
+        $contracte->update(['denumire_contract'=> $request->denumire_cotract]);
+        $contracte->update(['descriere_contract'=> $request->descriere_contract]);
+        return redirect(route('contract.index'))->with('message','Updated');
+    }
+
+    public function edit(contract $contracte)
+    {
+         
+    	return view('contract.edit',compact('contracte'));
+    }
 }

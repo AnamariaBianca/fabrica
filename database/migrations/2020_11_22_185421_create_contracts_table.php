@@ -14,7 +14,7 @@ class CreateContractsTable extends Migration
     public function up()
     {
         Schema::create('contracts', function (Blueprint $table) {
-            $table->increments('id_contract');
+            $table->id();
             $table->string('denumire_contract');
             $table->text('descriere_contract');
             
@@ -22,10 +22,7 @@ class CreateContractsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('contracts', function (Blueprint $table) {
-            $table->foreignId('id_produs')->constrained('produses');
-            $table->foreignId('id_furnizor')->constrained('furnizors');
-        });
+        
     }
 
     /**

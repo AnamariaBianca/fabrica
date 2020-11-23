@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/contract','ContractController@index')->name('contract');
 Route::get('/contract/create','ContractController@create')->name('contract.create');
 Route::post('/contract/create','ContractController@store')->name('contract.store');
+Route::get('/contract/{contracte}/edit','ContractController@edit')->name('contract.edit');
+Route::post('/contract/{contracte}/update','ContractController@update')->name('contract.update');
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

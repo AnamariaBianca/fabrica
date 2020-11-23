@@ -14,16 +14,12 @@ class CreateFurnizorsTable extends Migration
     public function up()
     {
         Schema::create('furnizors', function (Blueprint $table) {
-            $table->increments('id_furnizor');
+            $table->id();
             $table->string('denumire_furnizor');
-            
             $table->timestamps();
         });
 
-        Schema::table('furnizors', function (Blueprint $table) {
-            $table->foreignId('id_produs')->constrained('produses');
-            $table->foreignId('id_contract')->constrained('contracts');
-        });
+        
     }
 
     /**

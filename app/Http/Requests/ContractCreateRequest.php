@@ -24,8 +24,8 @@ class ContractCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'denumire_contract'=>'required|max:255',
-            // 'descriere_contract'=>'required|max:1000',
+            'denumire_contract'=>'required|max:255',
+            'descriere_contract'=>'required|max:1000',
         ];
     }
 
