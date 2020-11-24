@@ -9,10 +9,10 @@
             @csrf
             @method('put')
             
-            <input type="text" name="denumire_contract"  class="py-2 px-2 border rounded"/>
+            <input type="text" name="denumire_contract"  class="py-2 px-2 border rounded" value={{$contracte->denumire_contract}}/>
             
             <div class="py-1">
-            <textarea name="descriere_contract" class="p-2 rounded border "></textarea>
+            <textarea name="descriere_contract" class="p-2 rounded border " >{{$contracte->descriere_contract}}</textarea>
             </div>
             <input type="submit" value="Update" class ="p-1 border rounded-lg"/>
         </form>

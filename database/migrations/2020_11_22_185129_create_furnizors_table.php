@@ -16,6 +16,7 @@ class CreateFurnizorsTable extends Migration
         Schema::create('furnizors', function (Blueprint $table) {
             $table->id();
             $table->string('denumire_furnizor');
+            $table->softDeletes();
             $table->timestamps();
         });
 

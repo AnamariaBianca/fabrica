@@ -26,7 +26,8 @@ class ContractController extends Controller
         contract::create($request->all());
         return redirect()->back()->with ('message', 'Contract adaugat!');
      }
-public function edit(contract $contracte)
+
+    public function edit(contract $contracte)
     {
          
     	return view('contract.edit',compact('contracte'));

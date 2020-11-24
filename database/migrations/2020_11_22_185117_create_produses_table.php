@@ -17,6 +17,7 @@ class CreateProdusesTable extends Migration
             $table->id();
             $table->string('denumire_produs');
             $table->text('descriere_produs');
+            $table->softDeletes();
             $table->timestamps();
         });
 
