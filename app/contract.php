@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class contract extends Model
 {
+    
     protected $fillable=['denumire_contract','descriere_contract'];
 
 

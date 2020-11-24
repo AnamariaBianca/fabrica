@@ -10,17 +10,17 @@
 <ul class="my-5">
 	<x-alert/>
 
-	    @foreach($contracte as $contract)
+	    @foreach($contracte as $contracte)
 
         
-            <li>
-            {{$contract->denumire_contract}}
+        <li class="flex justify-between p-2">
+            {{$contracte->denumire_contract}}
 
-            <div>
+            <div class="flex justify-between p-2">
 
 					
 					
-					<a href="{{'/contract/'.$contract->id.'/edit'}}" class="text-yellow-400 cursor-pointer  text-white"><span class="fas fa-edit px-2"></a>
+					<a href="{{'/contract/'.$contracte->id.'/edit'}}" class="text-yellow-400 cursor-pointer  text-white"><span class="fas fa-edit px-2"></a>
 
 
 
