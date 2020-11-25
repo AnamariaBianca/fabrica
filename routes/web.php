@@ -7,6 +7,7 @@ Route::get('/contract/create','ContractController@create')->name('contract.creat
 Route::post('/contract/create','ContractController@store')->name('contract.store');
 Route::get('/contract/{contracte}/edit','ContractController@edit')->name('contract.edit');
 Route::put('/contract/{contracte}/update','ContractController@update')->name('contract.update');
+Route::delete('/contract/{contracte}/delete','ContractController@delete')->name('contract.delete');
 
 /*
 |--------------------------------------------------------------------------

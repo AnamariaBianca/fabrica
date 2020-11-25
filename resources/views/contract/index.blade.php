@@ -22,11 +22,18 @@
 
 					
 					
-					<a href="{{'/contract/'.$contracte->id.'/edit'}}" class="text-yellow-400 cursor-pointer  text-white"><span class="fas fa-edit px-2"></a>
+					<a href="{{route('contract.edit',$contracte->id)}}" class="text-yellow-400 cursor-pointer  text-white"><span class="fas fa-edit px-2"></a>
 
 
 
-
+                    <span class="fas fa-trash text-red-400 p-1 cursor-pointer" onclick="event.preventDefault(); 
+					if(confirm('Are you sure?')){
+					document.getElementById('form-delete-{{$contracte->id}}').submit()
+				}"/>
+					<form style="display:none" id="{{'form-delete-'.$contracte->id}}" method="post" action="{{route('contract.delete',$contracte->id)}}">
+						@csrf
+						@method('delete')
+					</form>
 					
 
 

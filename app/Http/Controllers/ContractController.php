@@ -35,10 +35,16 @@ class ContractController extends Controller
      public function update(ContractCreateRequest $request, contract $contracte)
     {
         //dd($request->all());
-        $contracte->update(['denumire_contract'=> $request->denumire_cotract]);
+        $contracte->update(['denumire_contract'=> $request->denumire_contract]);
         $contracte->update(['descriere_contract'=> $request->descriere_contract]);
         return redirect(route('contract.index'))->with('message','Updated');
     }
+
+    public function delete(contract $contracte)
+    {
+        $contracte->delete();
+        return redirect()->back()->with('message', 'Task deleted');
+    } 
 
     
 }
