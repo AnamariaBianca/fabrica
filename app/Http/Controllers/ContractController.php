@@ -27,15 +27,16 @@ class ContractController extends Controller
 
     public function edit(contract $contracte)
     {
-         
+        $contracte = contract::findorFail($contracte->id);
     	return view('contract.edit',compact('contracte'));
     }
      public function update(ContractCreateRequest $request, contract $contracte)
     {
         //dd($request->all());
-        $contract = contract::find($id);
+        $contract = contract::find($request->id);
         $contracte->update(['denumire_contract'=> $request->denumire_contract]);
         $contracte->update(['descriere_contract'=> $request->descriere_contract]);
+        
         return redirect(route('contract.index'))->with('message','Updated');
     }
 
