@@ -10,7 +10,7 @@ class furnizor extends Model
 {
     use SoftDeletes;
 
-    protected $fillable=['nume_furnizor','id_contract','id_produs'];
+    protected $fillable=['denumire_furnizor'];
 
 
     public function contracteF()

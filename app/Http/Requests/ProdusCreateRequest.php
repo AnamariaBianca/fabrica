@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ContractCreateRequest extends FormRequest
+class ProdusCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,15 +24,15 @@ class ContractCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'denumire_contract'=>'required|max:255',
-            'descriere_contract'=>'required|max:1000',
+            'denumire_produs'=>'required|max:255',
+            'descriere_produs'=>'required|max:1000',
         ];
     }
 
     public function messages(){
         return[
-            'denumire_contract.max'=> 'Denumirea contractului nu poate depasi 255 de caractere.',
-            'descriere_contract.max'=> 'Descrierea contractului nu poate depasi 1000 de caractere.',
+            'denumire_produs.max'=> 'Denumirea produsului nu poate depasi 255 de caractere.',
+            'descriere_produs.max'=> 'Descrierea produsului nu poate depasi 1000 de caractere.',
 
         ];
     }

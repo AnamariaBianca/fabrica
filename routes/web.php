@@ -2,12 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/contract','ContractController@index')->name('contract.index');
-Route::get('/contract/create','ContractController@create')->name('contract.create');
-Route::post('/contract/create','ContractController@store')->name('contract.store');
-Route::get('/contract/{contracte}/edit','ContractController@edit')->name('contract.edit');
-Route::put('/contract/{contracte}/update','ContractController@update')->name('contract.update');
-Route::delete('/contract/{contracte}/delete','ContractController@delete')->name('contract.delete');
+Route::resource('/contract','ContractController');
+
+Route::resource('/furnizor','FurnizorController');
+
+Route::resource('/produs','ProdusController');
+
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------

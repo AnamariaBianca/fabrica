@@ -10,7 +10,7 @@ class produs extends Model
 {
     use SoftDeletes;
 
-    protected $fillable=['nume_produs','descriere_produs','id_contract','id_furnizor'];
+    protected $fillable=['denumire_produs','descriere_produs'];
 
 
     public function contracteP()

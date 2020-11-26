@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\contract;
-use App\produs;
-use App\furnizor;
 use App\Http\Requests\ContractCreateRequest;
 use Illuminate\Http\Request;
 
@@ -35,15 +33,18 @@ class ContractController extends Controller
      public function update(ContractCreateRequest $request, contract $contracte)
     {
         //dd($request->all());
+        $contract = contract::find($id);
         $contracte->update(['denumire_contract'=> $request->denumire_contract]);
         $contracte->update(['descriere_contract'=> $request->descriere_contract]);
         return redirect(route('contract.index'))->with('message','Updated');
     }
 
-    public function delete(contract $contracte)
+    public function destroy($id)
     {
-        $contracte->delete();
-        return redirect()->back()->with('message', 'Task deleted');
+        //dd($contracte);
+        $contract = contract::findOrFail($id);
+        $contract->delete();
+        return redirect()->back()->with('message', 'Contract sters!');
     } 
 
     

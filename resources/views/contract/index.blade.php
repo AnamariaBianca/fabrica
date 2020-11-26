@@ -3,7 +3,7 @@
 
 <div class="flex justify-center border-b pb-4">
 	        <h1 class="text-2xl">Lista contracte</h1>
-	        <a href="/contract/create" class="mx-10 py-1 px-1 bg-blue-400 cursor-pointer rounded text-white">Adauga contract</a>
+	        <a href="{{route('contract.create')}}" class="mx-10 py-1 px-1 bg-blue-400 cursor-pointer rounded text-white">Adauga contract</a>
 
 </div>
 
@@ -30,10 +30,11 @@
 					if(confirm('Are you sure?')){
 					document.getElementById('form-delete-{{$contracte->id}}').submit()
 				}"/>
-					<form style="display:none" id="{{'form-delete-'.$contracte->id}}" method="post" action="{{route('contract.delete',$contracte->id)}}">
+					<form style="display:none" id="{{'form-delete-'.$contracte->id}}" method="post" action="{{route('contract.destroy',$contracte->id)}}">
 						@csrf
 						@method('delete')
 					</form>
+                    
 					
 
 
