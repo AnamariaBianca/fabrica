@@ -30,7 +30,7 @@
 					if(confirm('Are you sure?')){
 					document.getElementById('form-delete-{{$furnizori->id}}').submit()
 				}"/>
-					<form style="display:none" id="{{'form-delete-'.$furnizori->id}}" method="post" action="{{route('furnizor.destroy',$furnizori->id)}}">
+					<form style="display:none" id="{{'form-delete-'.$furnizori->id}}" method="post" action="{{route('furnizor.delete',$furnizori->id)}}">
 						@csrf
 						@method('delete')
 					</form>

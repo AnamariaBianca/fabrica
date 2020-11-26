@@ -31,14 +31,14 @@ class FurnizorController extends Controller
          
     	return view('furnizor.edit',compact('furnizori'));
     }
-     public function update(FurnizoriCreateRequest $request, furnizor $furnizori)
+     public function update(FurnizorCreateRequest $request, furnizor $furnizori)
     {
         //dd($request->all());
         $furnizori->update(['denumire_furnizor'=> $request->denumire_furnizor]);
         return redirect(route('furnizor.index'))->with('message','Updated');
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
         $furnizor = furnizor::findOrFail($id);
         $furnizor->delete();

@@ -9,29 +9,22 @@
 	<x-alert/>
 
 	    @foreach($furnizori as $furnizor )
+        
+
         <li class="flex justify-between p-2">
         
         
-        Model: furnizor
-        </br>
-        Id : {{$furnizor->id}}
-        </br>
-        @if($furnizor->created_at)
-        Action : Created
-        @elseif($furnizor->deleted_at)
-        Action : Deleted
-        @elseif($furnizor->updated_at)
-        Action : Updated
-        @endif
+       
 
-           
-        
-            
 
-            </li>
+        </li>
         
 
         @endforeach
+
+
+        
+
  </ul>
 
  

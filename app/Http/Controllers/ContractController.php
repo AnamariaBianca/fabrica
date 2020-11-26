@@ -40,7 +40,7 @@ class ContractController extends Controller
         return redirect(route('contract.index'))->with('message','Updated');
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
         //dd($contracte);
         $contract = contract::findOrFail($id);

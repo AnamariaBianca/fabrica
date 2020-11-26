@@ -39,7 +39,7 @@ class ProdusController extends Controller
         return redirect(route('produs.index'))->with('message','Updated');
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
         $produs = produs::findOrFail($id);
         $produs->delete();
