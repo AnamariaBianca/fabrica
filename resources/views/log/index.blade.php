@@ -11,7 +11,7 @@
 	    @foreach($furnizori as $furnizor)
         
 
-        <li class="flex justify-between p-2">
+        <li class="flex justify-center p-2">
         
             
             @if($furnizor->created_at)
@@ -61,7 +61,7 @@
 	    @foreach($produse as $produs)
         
 
-        <li class="flex justify-between p-2">
+        <li class="flex justify-center p-2">
             
             @if($produs->created_at)
             Model: produs
@@ -110,7 +110,7 @@
 	    @foreach($contracte as $contract)
         
 
-        <li class="flex justify-between p-2">
+        <li class="flex justify-center p-2">
             
             @if($contract->created_at)
             Model: contract
