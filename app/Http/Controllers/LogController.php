@@ -13,8 +13,9 @@ class LogController extends Controller
     public function index()
     {
         $produse= produs::all();
-        $furnizori= furnizor::all();
+        $furnizori= furnizor::withTrashed()->get();
         $contracte = contract::all();
+        //$trashedAndNotTrashed = produs::withTrashed()->get();
     	return view('log.index',compact('contracte','furnizori','produse'));
     }
 }
