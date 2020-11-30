@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\contract;
+use App\furnizor;
+use App\produs;
 use App\Http\Requests\ContractCreateRequest;
 use Illuminate\Http\Request;
 
@@ -10,6 +12,8 @@ class ContractController extends Controller
     public function index()
     {
         $contracte= contract::all();
+       
+
         return view('contract.index',compact('contracte'));
     }
 

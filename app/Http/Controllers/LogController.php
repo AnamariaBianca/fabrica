@@ -12,9 +12,9 @@ class LogController extends Controller
 {
     public function index()
     {
-        $produse= produs::all();
+        $produse= produs::withTrashed()->get();
         $furnizori= furnizor::withTrashed()->get();
-        $contracte = contract::all();
+        $contracte = contract::withTrashed()->get();
         //$trashedAndNotTrashed = produs::withTrashed()->get();
     	return view('log.index',compact('contracte','furnizori','produse'));
     }
