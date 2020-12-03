@@ -9,15 +9,16 @@ class contract extends Model
 {
     use SoftDeletes;
 
-    protected $fillable=['denumire_contract','descriere_contract'];
+    protected $fillable=['denumire_contract','descriere_contract','denumire_furnizor','denumire_produs'];
     
 
-    public function produseC()
+    public function produse()
     {
         return $this->hasMany(produs::class);
+        
     }
 
-    public function furnizoriC()
+    public function furnizor()
     {
         return $this->hasOne(furnizor::class);
     }

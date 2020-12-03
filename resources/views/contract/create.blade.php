@@ -11,6 +11,26 @@
            <div class="py-1">
            <textarea name="descriere_contract" class="p-2 rounded border " placeholder="Descriere"></textarea>
            </div>
+           <div class="py-1">
+
+           <select class="form-control m-bot15" name="denumire_furnizor">
+           <option>Selecteaza furnizor</option>
+          @foreach($furnizori as $furnizor)
+           <option value="{{$furnizor->denumire_furnizor}}">{{$furnizor->denumire_furnizor}}</option>
+          @endForeach
+          
+           </select></br>
+
+           <select multiple class="form-control m-bot15" name="denumire_produs">
+           <option>Selecteaza produs</option>
+          @foreach($produse as $produs)
+           <option value="{{$produs->denumire_produs}}">{{$produs->denumire_produs}}</option>
+          @endForeach
+          
+           </select></br>
+           
+
+            
             <input type="submit" value="Adauga" class ="p-1 border rounded-lg"/>
             
         </form>

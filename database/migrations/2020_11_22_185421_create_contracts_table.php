@@ -17,7 +17,12 @@ class CreateContractsTable extends Migration
             $table->id();
             $table->string('denumire_contract');
             $table->text('descriere_contract');
-            $table->softDeletes();           
+            $table->softDeletes();
+            $table->text('denumire_furnizor');
+            $table->text('denumire_produs');
+
+           
+           
             $table->timestamps();
         });
 

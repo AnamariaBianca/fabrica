@@ -12,14 +12,18 @@ class ContractController extends Controller
     public function index()
     {
         $contracte= contract::all();
-       
-
-        return view('contract.index',compact('contracte'));
+        $produse= produs::all();
+        $furnizori= furnizor::all();
+        
+        return view('contract.index',compact('contracte','produse','furnizori'));
     }
 
     public function create()
     {
-        return view('contract.create');
+        $contracte= contract::all();
+        $produse= produs::all();
+        $furnizori= furnizor::all();
+        return view('contract.create',compact('contracte','produse','furnizori'));
     }
 
     public function store(ContractCreateRequest $request)
@@ -52,5 +56,6 @@ class ContractController extends Controller
         return redirect()->back()->with('message', 'Contract sters!');
     } 
 
+    
     
 }

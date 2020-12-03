@@ -15,6 +15,6 @@ class produs extends Model
 
     public function contracteP()
     {
-        $this->belongsToMany(Contract::class);
+        return $this->belongsToMany(contract::class);
     }
 }
