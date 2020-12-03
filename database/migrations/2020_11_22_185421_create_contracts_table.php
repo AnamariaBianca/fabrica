@@ -18,8 +18,8 @@ class CreateContractsTable extends Migration
             $table->string('denumire_contract');
             $table->text('descriere_contract');
             $table->softDeletes();
-            $table->text('denumire_furnizor');
-            $table->text('denumire_produs');
+            $table->unsignedBigInteger('furnizor_id');
+            
 
            
            

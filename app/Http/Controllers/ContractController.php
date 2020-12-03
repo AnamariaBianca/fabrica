@@ -12,10 +12,9 @@ class ContractController extends Controller
     public function index()
     {
         $contracte= contract::all();
-        $produse= produs::all();
-        $furnizori= furnizor::all();
+       
         
-        return view('contract.index',compact('contracte','produse','furnizori'));
+        return view('contract.index',compact('contracte'));
     }
 
     public function create()

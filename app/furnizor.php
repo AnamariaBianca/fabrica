@@ -15,6 +15,6 @@ class furnizor extends Model
 
     public function contracteF()
     {
-        return $this->belongsToMany(contract::class);
+        return $this->hasMany(contract::class);
     }
 }

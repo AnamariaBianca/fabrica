@@ -13,18 +13,18 @@
            </div>
            <div class="py-1">
 
-           <select class="form-control m-bot15" name="denumire_furnizor">
+           <select class="form-control m-bot15" name="furnizor_id">
            <option>Selecteaza furnizor</option>
           @foreach($furnizori as $furnizor)
-           <option value="{{$furnizor->denumire_furnizor}}">{{$furnizor->denumire_furnizor}}</option>
+           <option value="{{$furnizor->id}}">{{$furnizor->id}}</option>
           @endForeach
           
-           </select></br>
+           </select></br></br>
 
-           <select multiple class="form-control m-bot15" name="denumire_produs">
+           <select multiple class="form-control m-bot15" name="produs_id">
            <option>Selecteaza produs</option>
           @foreach($produse as $produs)
-           <option value="{{$produs->denumire_produs}}">{{$produs->denumire_produs}}</option>
+           <option value="{{$produs->id}}">{{$produs->id}}</option>
           @endForeach
           
            </select></br>

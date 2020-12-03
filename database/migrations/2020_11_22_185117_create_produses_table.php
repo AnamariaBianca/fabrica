@@ -21,7 +21,15 @@ class CreateProdusesTable extends Migration
             $table->timestamps();
         });
 
-        
+
+        Schema::create('contract_produs', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('produs_id');
+            $table->unsignedBigInteger('contract_id');
+            $table->timestamps();
+
+            $table->unique(['produs_id','contract_id']);
+        });
     }
 
     /**
