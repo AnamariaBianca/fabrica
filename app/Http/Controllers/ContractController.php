@@ -27,8 +27,11 @@ class ContractController extends Controller
 
     public function store(ContractCreateRequest $request)
      {
-        // dd($request->all());
-        contract::create($request->all());
+        //dd($request->all());
+       $contract=new contract(request(['denumire_contract','descriere_contract','furnizor_id']));
+       $contract->save();
+        $contract->produse()->attach(request('produse'));
+
         return redirect()->back()->with ('message', 'Contract adaugat!');
      }
 

@@ -19,10 +19,7 @@ class CreateContractsTable extends Migration
             $table->text('descriere_contract');
             $table->softDeletes();
             $table->unsignedBigInteger('furnizor_id');
-            
-
-           
-           
+                  
             $table->timestamps();
         });
 

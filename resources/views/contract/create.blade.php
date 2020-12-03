@@ -21,10 +21,10 @@
           
            </select></br></br>
 
-           <select multiple class="form-control m-bot15" name="produs_id">
+           <select multiple class="form-control m-bot15" name="produse[]">
            <option>Selecteaza produs</option>
           @foreach($produse as $produs)
-           <option value="{{$produs->id}}">{{$produs->id}}</option>
+           <option value="{{$produs->id}}">{{$produs->denumire_produs}}</option>
           @endForeach
           
            </select></br>
