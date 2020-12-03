@@ -26,6 +26,7 @@ class ContractCreateRequest extends FormRequest
         return [
             'denumire_contract'=>'required|max:255',
             'descriere_contract'=>'required|max:1000',
+            
         ];
     }
 

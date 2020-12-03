@@ -16,7 +16,7 @@
            <select class="form-control m-bot15" name="furnizor_id">
            <option>Selecteaza furnizor</option>
           @foreach($furnizori as $furnizor)
-           <option value="{{$furnizor->id}}">{{$furnizor->id}}</option>
+           <option value="{{$furnizor->id}}">{{$furnizor->denumire_furnizor}}</option>
           @endForeach
           
            </select></br></br>
