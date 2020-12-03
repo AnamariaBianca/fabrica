@@ -17,6 +17,7 @@
         <li class="flex justify-between p-2">
             {{$contracte->denumire_contract}}
             {{$contracte->descriere_contract}}
+			{{$produse->denumire_produse}}
 			
 			
 
