@@ -22,7 +22,8 @@ class FurnizorController extends Controller
     public function store(FurnizorCreateRequest $request)
      {
         // dd($request->all());
-        furnizor::create($request->all());
+        $furnizor=furnizor::create($request->all());
+        $furnizor->logs()->create(['body' => 'Created']);
         return redirect()->back()->with ('message', 'Furnizor adaugat!');
      }
 
@@ -35,6 +36,8 @@ class FurnizorController extends Controller
     {
         //dd($request->all());
         $furnizori->update(['denumire_furnizor'=> $request->denumire_furnizor]);
+        $furnizori->logs()->create(['body' => 'Updated']);
+
         return redirect(route('furnizor.index'))->with('message','Updated');
     }
 
@@ -42,6 +45,8 @@ class FurnizorController extends Controller
     {
         $furnizor = furnizor::findOrFail($id);
         $furnizor->delete();
+        $furnizor->logs()->create(['body' => 'Deleted']);
+
         return redirect()->back()->with('message', 'Furnizor sters!');
     } 
 }

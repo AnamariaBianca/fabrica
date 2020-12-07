@@ -9,11 +9,28 @@
             @csrf
             @method('put')
             
-            <input type="text" name="denumire_contract"  value={{$contracte->denumire_contract}} class="py-2 px-2 border rounded" />
+            <input type="text" name="denumire_contract" class="py-2 px-2 border rounded" value={{$contracte->denumire_contract}}>
             
             <div class="py-1">
             <textarea name="descriere_contract" class="p-2 rounded border " >{{$contracte->descriere_contract}}</textarea>
             </div>
+
+            <select class="form-control m-bot15" name="furnizor_id">
+           <option>Selecteaza furnizor</option>
+          @foreach($furnizori as $furnizor)
+           <option value="{{$furnizor->id}}">{{$furnizor->denumire_furnizor}}</option>
+          @endForeach
+          
+           </select></br></br>
+
+           <select multiple class="form-control m-bot15" name="produse[]">
+           <option>Selecteaza produs</option>
+          @foreach($produse as $produs)
+           <option value="{{$produs->id}}">{{$produs->denumire_produs}}</option>
+          @endForeach
+          
+           </select></br>
+
             <input type="submit" value="Update" class ="p-1 border rounded-lg"/>
         </form>
 

@@ -15,6 +15,11 @@ class produs extends Model
 
     public function contracteP()
     {
-        return $this->belongsToMany(contract::class);
+        return $this->belongsToMany(contract::class)->withTimestamps();
+    }
+
+    public function logs()
+    {
+        return $this->morphMany(log::class, 'loggable');
     }
 }

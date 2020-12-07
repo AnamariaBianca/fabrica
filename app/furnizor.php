@@ -17,4 +17,9 @@ class furnizor extends Model
     {
         return $this->hasMany(contract::class);
     }
+
+    public function logs()
+    {
+        return $this->morphMany(log::class, 'loggable');
+    }
 }

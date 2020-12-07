@@ -21,8 +21,10 @@ class ProdusController extends Controller
 
     public function store(ProdusCreateRequest $request)
      {
+        
         // dd($request->all());
-        produs::create($request->all());
+        $produs=produs::create($request->all());
+        $produs->logs()->create(['body' => 'Created']);
         return redirect()->back()->with ('message', 'Produs adaugat!');
      }
 
@@ -36,6 +38,7 @@ class ProdusController extends Controller
         //dd($request->all());
         $produse->update(['denumire_produs'=> $request->denumire_produs]);
         $produse->update(['descriere_produs'=> $request->descriere_produs]);
+        $produse->logs()->create(['body' => 'Updated']);
         return redirect(route('produs.index'))->with('message','Updated');
     }
 
@@ -43,6 +46,8 @@ class ProdusController extends Controller
     {
         $produs = produs::findOrFail($id);
         $produs->delete();
+        $produs->logs()->create(['body' => 'Deleted']);
+
         return redirect()->back()->with('message', 'Produs sters!');
     } 
 }

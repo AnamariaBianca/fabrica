@@ -30,7 +30,8 @@ class ContractController extends Controller
         //dd($request->all());
        $contract=new contract(request(['denumire_contract','descriere_contract','furnizor_id']));
        $contract->save();
-        $contract->produse()->attach(request('produse'));
+       $contract->produse()->attach(request('produse'));
+       $contract->logs()->create(['body' => 'Created']);
 
         return redirect()->back()->with ('message', 'Contract adaugat!');
      }
@@ -38,7 +39,10 @@ class ContractController extends Controller
     public function edit(contract $contracte)
     {
         $contracte = contract::findorFail($contracte->id);
-    	return view('contract.edit',compact('contracte'));
+        $produse= produs::all();
+        $furnizori= furnizor::all();
+        
+    	return view('contract.edit',compact('contracte','produse','furnizori'));
     }
      public function update(ContractCreateRequest $request, contract $contracte)
     {
@@ -46,6 +50,12 @@ class ContractController extends Controller
         $contract = contract::find($request->id);
         $contracte->update(['denumire_contract'=> $request->denumire_contract]);
         $contracte->update(['descriere_contract'=> $request->descriere_contract]);
+        $contracte->update(['furnizor_id'=> $request->furnizor_id]);
+        $contracte->update(['produs_id'=> $request->produs_id]);
+        $contracte->produse()->sync(request('produse'));
+        $contracte->logs()->create(['body' => 'Updated']);
+
+
         
         return redirect(route('contract.index'))->with('message','Updated');
     }
@@ -55,6 +65,8 @@ class ContractController extends Controller
         //dd($contracte);
         $contract = contract::findOrFail($id);
         $contract->delete();
+        $contract->logs()->create(['body' => 'Deleted']);
+
         return redirect()->back()->with('message', 'Contract sters!');
     } 
 

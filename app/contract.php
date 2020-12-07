@@ -14,12 +14,17 @@ class contract extends Model
 
     public function produse()
     {
-        return $this->belongsToMany(produs::class);
+        return $this->belongsToMany(produs::class)->withTimestamps();
         
     }
 
     public function furnizor()
     {
         return $this->belongsTo(furnizor::class);
+    }
+
+    public function logs()
+    {
+        return $this->morphMany(log::class, 'loggable');
     }
 }

@@ -8,147 +8,25 @@
 <ul class="my-5">
 	<x-alert/>
 
-	    @foreach($furnizori as $furnizor)
-        
-
-        <li class="flex justify-center p-2">
-        
-            
-            @if($furnizor->created_at)
-            Model: furnizor
-            </br>
-            Id : {{$furnizor->id}}
-            </br>
-            Action : Created at {{$furnizor->created_at}}
-            </br>
-            @endif
-            
-
-            @if($furnizor->deleted_at)
-            Model: furnizor
-            </br>
-            Id : {{$furnizor->id}}
-            </br>
-            Action : Deleted at {{$furnizor->deleted_at}}
-            </br>
-            @endif 
-
-            
-            @if($furnizor->updated_at > $furnizor->created_at && !$furnizor->deleted_at)
-            Model: furnizor
-            </br>
-            Id : {{$furnizor->id}}
-            </br>
-            Action : Updated at {{$furnizor->updated_at}}
-            </br>
-            @endif
-
-        
-         </li>
+		@foreach($logs as $log)
+			
+			<li class="flex justify-center p-2">
+				@if($log->loggable_type == 'App\produs')	
+					Model: Produs
+				@elseif($log->loggable_type == 'App\furnizor')
+					Model: Furnizor
+				@elseif($log->loggable_type == 'App\contract')
+					Model: Contract
+				@endif
+				<br>
+				Model_id: {{$log->loggable_id}}
+				<br>
+				Action: {{$log->body}} 
+			</li>
         
 
         @endforeach
 
-
-        
-
- </ul>
-
-
- <ul class="my-5">
-	<x-alert/>
-
-	    @foreach($produse as $produs)
-        
-
-        <li class="flex justify-center p-2">
-            
-            @if($produs->created_at)
-            Model: produs
-            </br>
-            Id : {{$produs->id}}
-            </br>
-            Action : Created at {{$produs->created_at}}
-            </br>
-            @endif
-            
-
-            @if($produs->deleted_at)
-            Model: produs
-            </br>
-            Id : {{$produs->id}}
-            </br>
-            Action : Deleted at {{$produs->deleted_at}}
-            </br>
-            @endif 
-
-            
-            @if($produs->updated_at > $produs->created_at && !$produs->deleted_at)
-            Model: produs
-            </br>
-            Id : {{$produs->id}}
-            </br>
-            Action : Updated at {{$produs->updated_at}}
-            </br>
-            @endif
-
-        
-         </li>
-        
-
-        @endforeach
-
-
-        
-
- </ul>
-
-
- <ul class="my-5">
-	<x-alert/>
-
-	    @foreach($contracte as $contract)
-        
-
-        <li class="flex justify-center p-2">
-            
-            @if($contract->created_at)
-            Model: contract
-            </br>
-            Id : {{$contract->id}}
-            </br>
-            Action : Created at {{$contract->created_at}}
-            </br>
-            @endif
-            
-
-            @if($contract->deleted_at)
-            Model: contract
-            </br>
-            Id : {{$contract->id}}
-            </br>
-            Action : Deleted at {{$contract->deleted_at}}
-            </br>
-            @endif 
-
-            
-            @if($contract->updated_at > $contract->created_at && !$contract->deleted_at)
-            Model: contract
-            </br>
-            Id : {{$contract->id}}
-            </br>
-            Action : Updated at {{$contract->updated_at}}
-            </br>
-            @endif
-
-        
-         </li>
-        
-
-        @endforeach
-
-
-        
  </ul>
  
  <a href="http://junior4.qik.ro/" class="m-5 py-1 px-1 bg-white-400 border cursor-pointer rounded text-black"> Back</a></br></br>
