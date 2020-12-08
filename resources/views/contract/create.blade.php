@@ -13,7 +13,7 @@
            </div>
            <div class="py-1">
 
-           <select class="form-control m-bot15" name="furnizor_id">
+           <select class="form-control m-bot15" name="furnizor_id" required>
            <option>Selecteaza furnizor</option>
           @foreach($furnizori as $furnizor)
            <option value="{{$furnizor->id}}">{{$furnizor->denumire_furnizor}}</option>
@@ -21,7 +21,7 @@
           
            </select></br></br>
 
-           <select multiple class="form-control m-bot15" name="produse[]">
+           <select multiple class="form-control m-bot15" name="produse[]" required>
            <option>Selecteaza produs</option>
           @foreach($produse as $produs)
            <option value="{{$produs->id}}">{{$produs->denumire_produs}}</option>

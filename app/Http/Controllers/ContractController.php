@@ -57,7 +57,7 @@ class ContractController extends Controller
 
 
         
-        return redirect(route('contract.index'))->with('message','Updated');
+        return redirect(route('contract.index'))->withInput()->with('message','Updated');
     }
 
     public function delete($id)
