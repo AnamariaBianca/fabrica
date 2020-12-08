@@ -16,7 +16,7 @@
             </div>
 
             
-           <select class="form-control m-bot15" name="furnizor_id" required>
+           <select multiple class="form-control m-bot15" name="furnizor_id" required>
            <option>Selecteaza furnizor</option>
           
             @foreach($furnizori as $furnizor)
@@ -37,8 +37,7 @@
            <option>Selecteaza produs</option>
            @foreach($produse as $produs)
            
-           
-        <option value="{{$produs->id}}" @if( in_array( $produs->id, $contracte->produse->pluck('id')->toArray() ) ) 
+           <option value="{{$produs->id}}" @if( in_array( $produs->id, $contracte->produse->pluck('id')->toArray() ) ) 
                 selected="selected" @endif>{{$produs->denumire_produs}}</option>
              
             
