@@ -16,20 +16,34 @@
             </div>
 
             
-            <select class="form-control m-bot15" name="furnizor_id" required>
+           <select class="form-control m-bot15" name="furnizor_id" required>
            <option>Selecteaza furnizor</option>
-          @foreach($furnizori as $furnizor)
-           <option value="{{$furnizor->id}}" selected >{{$furnizor->denumire_furnizor}}</option>
-          @endForeach
+          
+            @foreach($furnizori as $furnizor)
+            @if ($furnizor->id == $contracte->furnizor_id)
+		   {
+			<option value="{{$furnizor->id}}" selected >{{$furnizor->denumire_furnizor}}</option>
+		   }
+		   @else 
+		   {
+			<option value="{{$furnizor->id}}" >{{$furnizor->denumire_furnizor}}</option>
+		   }
+           @endif
+           @endForeach
           
            </select></br></br>
 
            <select multiple class="form-control m-bot15" name="produse[]" required>
            <option>Selecteaza produs</option>
-          @foreach($produse as $produs)
-           <option value="{{$produs->id}}" selected >{{$produs->denumire_produs}}</option>
+           @foreach($produse as $produs)
+           
+           
+        <option value="{{$produs->id}}" @if( in_array( $produs->id, $contracte->produse->pluck('id')->toArray() ) ) 
+                selected="selected" @endif>{{$produs->denumire_produs}}</option>
+             
+            
+        
           @endForeach
-          
            </select></br>
 
             <input type="submit" value="Update" class ="p-1 border rounded-lg"/>
